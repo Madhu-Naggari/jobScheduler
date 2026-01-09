@@ -43,7 +43,10 @@ function Register() {
         },
         body: JSON.stringify(userDetails),
       };
-      const res = await fetch("http://localhost:3000/register", options);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/register`,
+        options
+      );
       const data = await res.json();
       if (res.ok) {
         router.push("/");

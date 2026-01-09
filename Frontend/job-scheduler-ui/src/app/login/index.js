@@ -48,7 +48,10 @@ function CardDemo() {
         },
         body: JSON.stringify(userDetails),
       };
-      const res = await fetch("http://localhost:3000/login", options);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/login`,
+        options
+      );
       const data = await res.json();
       if (res.ok) {
         Cookies.set("jwtToken", data.token);

@@ -1,13 +1,17 @@
-"use client";
 import { NextResponse } from "next/server";
-import { default as Cookies } from "js-cookie";
 
 export function middleware(req) {
-  const token = Cookies.get("jwtToken");
+  const { pathname } = req.nextUrl;
 
-  const protectedPaths = ["/", "/dashboard"];
+  // allow auth pages
+  if (pathname === "/login" || pathname === "/register") {
+    return NextResponse.next();
+  }
 
-  if (!token && protectedPaths.includes(req.nextUrl.pathname)) {
+  const token = req.cookies.get("jwtToken")?.value;
+
+  // protect jobs route only (NOT /)
+  if (!token && pathname.startsWith("/jobs")) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
@@ -15,5 +19,5 @@ export function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/", "/dashboard"],
+  matcher: ["/", "/jobs/:path*"],
 };
