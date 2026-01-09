@@ -228,11 +228,11 @@ Authorization: Bearer
 - POST `/login`
 
 ### Jobs
-- POST `/newJob`
-- POST `/:id/run`
-- GET `/all`
-- GET `/filter?status=completed&priority=low`
-- GET `/:id`
+- POST `/jobs`
+- POST `/run-job/:id`
+- GET `/jobs`
+- GET `/jobs?status=completed&priority=low`
+- GET `/jobs/:id`
 
 ---
 
