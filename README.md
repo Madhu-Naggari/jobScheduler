@@ -131,7 +131,7 @@ Job Finished → completed
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/your-username/job-scheduler.git
+git clone (https://github.com/Madhu-Naggari/jobScheduler.git)
 cd job-scheduler
 
 ### 2️⃣ Install dependencies
