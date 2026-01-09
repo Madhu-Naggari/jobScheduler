@@ -1,0 +1,53 @@
+POST http://localhost:3000/jobs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Im1hZGh1IHN1ZGhhbiIsImVtYWlsIjoibWFkaHVAZ21haWwuY29tIiwiaWF0IjoxNzY3ODQ1NTg4fQ.D4i1rA6_iROsCE8BuyMrimMK9w0YgdFJOvtWpTtrl6c
+Content-Type: application/json
+
+{
+  "taskName": "Send to something",
+  "priority": "high"
+}
+
+###
+POST http://localhost:3000/run-job/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibWFkaHUgc3VkaGFuIiwiaWF0IjoxNzY3Nzc3NDMxfQ.K-2In04MnjxJNDbaYzVWEHjWI4zl5BMSAyD-UvapBA8
+
+
+###
+GET http://localhost:3000/jobs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibWFkaHUgc3VkaGFuIiwiaWF0IjoxNzY3Nzc3NDMxfQ.K-2In04MnjxJNDbaYzVWEHjWI4zl5BMSAyD-UvapBA8
+
+###
+GET http://localhost:3000/jobs/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibWFkaHUgc3VkaGFuIiwiaWF0IjoxNzY3Nzc3NDMxfQ.K-2In04MnjxJNDbaYzVWEHjWI4zl5BMSAyD-UvapBA8
+
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "name":"madhu sudhan",
+  "email":"madhu@gmail.com",
+  "password":"sunny@12"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email":"madhu@gmail.com",
+  "password":"sunny@12"
+}
+
+###
+
+GET http://localhost:3000/jobs?priority=high
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibWFkaHUgc3VkaGFuIiwiaWF0IjoxNzY3Nzc3NDMxfQ.K-2In04MnjxJNDbaYzVWEHjWI4zl5BMSAyD-UvapBA8
+
+###
+
+
+
+
+
